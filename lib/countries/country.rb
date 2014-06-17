@@ -48,7 +48,8 @@ class ISO3166::Country
   end
 
   def ==(other)
-    self.data == other.data
+    return unless other.respond_to? :data
+    @data == other.data
   end
 
   def currency
